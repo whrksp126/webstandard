@@ -30,13 +30,13 @@
 #contents {
 }
 #footer {
-  height: 200px;
-  background: #333;
+  border-top: 1px solid #eee;
 }
 
 /* 컨텐츠 레이아웃 */
 #cont_nav {
   background-color: #f6fdff;
+  display: none;
 }
 #cont_tit {
   background-color: #eaf7fd;
@@ -142,9 +142,6 @@
 }
 .nav > div:last-child {
   width: 20%;
-} /* ie9부터 사용 가능 */
-.nav > div.last {
-  width: 20%;
 }
 .nav > div h3 {
   font-size: 18px;
@@ -185,9 +182,13 @@
   height: 60px;
   background: url(../img/icon.png) no-repeat 0 -600px;
 }
+.tit .btn.on {
+  /* 버튼을 클릭하면 생기는 클래스 */
+  background-position: 0 -660px;
+}
 
 /* 배너 */
-.ban {
+/* .ban {
   position: relative;
   padding: 24px 0 20px;
 }
@@ -224,10 +225,10 @@
 }
 .ban ul li:last-child {
   text-align: right;
-} /* ie9부터 적용 */
+} // ie9부터 적용 
 .ban ul li:nth-child(2) {
   text-align: center;
-} /* ie9부터 적용 */
+} // ie9부터 적용 
 .ban ul li.ban_img1 {
   text-align: left;
 }
@@ -242,6 +243,76 @@
 }
 .ban ul li img:hover {
   border-color: #98bcdc;
+} */
+
+/* 슬랙 배너 */
+.ban {
+  position: relative;
+  padding: 24px 0 40px;
+}
+.ban .slick-prev {
+  position: absolute;
+  left: -80px;
+  top: 60px;
+  width: 43px;
+  height: 43px;
+  background: #ccc;
+  background: url(../img/icon.png) no-repeat -150px 0;
+  text-indent: -9999px;
+}
+.ban .slick-next {
+  position: absolute;
+  right: -80px;
+  top: 60px;
+  width: 43px;
+  height: 43px;
+  background: #ccc;
+  background: url(../img/icon.png) no-repeat -150px -43px;
+  text-indent: -9999px;
+}
+.ban .slick-prev:hover {
+  background-position: -193px 0;
+}
+.ban .slick-next:hover {
+  background-position: -193px -43px;
+}
+.ban img {
+  border: 4px solid #dcdcdc;
+}
+.ban img:hover {
+  border-color: #98bcdc;
+}
+
+.ban .slick-slide {
+  margin: 10px;
+}
+
+.ban .slick-dots {
+  position: absolute;
+  bottom: 15px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.ban .slick-dots li {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+}
+.ban .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  background: #5dbfeb;
+  border-radius: 50%;
+}
+
+.ban .slick-dots li.slick-active button {
+  background: #2b91c8;
 }
 
 /* 컨텐츠 */
@@ -644,9 +715,9 @@
 
 /* 갤러리 */
 .gallery {
-  position: relative;
   border: 1px solid #ccc;
   height: 254px;
+  position: relative;
   overflow: hidden;
 }
 .gallery h4 {
@@ -664,49 +735,50 @@
 .gallery .gallery_btn ul {
   overflow: hidden;
 }
-.gallery .gallery_btn li {
+.gallery .gallery_btn ul li {
   float: left;
   margin: 1px 2px;
 }
-.gallery .gallery_btn li a {
+.gallery .gallery_btn ul li a {
   display: block;
   width: 23px;
   height: 23px;
   background: url(../img/icon.png) no-repeat;
 }
-.gallery .gallery_btn li.gb_icon1 a {
+.gallery .gallery_btn ul li.gb_icon1 a {
   background-position: -150px -120px;
 }
-.gallery .gallery_btn li.gb_icon2 a {
-  background-position: -150px -143px;
+.gallery .gallery_btn ul li.gb_icon2 a {
+  background-position: -150px -142px;
 }
-.gallery .gallery_btn li.gb_icon3 a {
+.gallery .gallery_btn ul li.gb_icon3 a {
   background-position: -150px -166px;
 }
-.gallery .gallery_btn li.gb_icon4 a {
+.gallery .gallery_btn ul li.gb_icon4 a {
   background-position: -150px -189px;
 }
-.gallery .gallery_btn li.gb_icon1 a:hover {
+
+.gallery .gallery_btn ul li.gb_icon1 a:hover {
   background-position: -173px -120px;
 }
-.gallery .gallery_btn li.gb_icon2 a:hover {
-  background-position: -173px -143px;
+.gallery .gallery_btn ul li.gb_icon2 a:hover {
+  background-position: -173px -142px;
 }
-.gallery .gallery_btn li.gb_icon3 a:hover {
+.gallery .gallery_btn ul li.gb_icon3 a:hover {
   background-position: -173px -166px;
 }
-.gallery .gallery_btn li.gb_icon4 a:hover {
+.gallery .gallery_btn ul li.gb_icon4 a:hover {
   background-position: -173px -189px;
 }
-.gallery .gallery_img img {
+.gallery .gallery_img ul li a img {
   width: 100%;
 }
 
 /* 로그인 */
 #login-wrap {
-  margin-bottom: 15px;
-  background: #f2f4f5;
+  background: #f2f4f4;
   padding: 15px;
+  margin-bottom: 15px;
 }
 .login_header {
   overflow: hidden;
@@ -718,7 +790,7 @@
   padding-right: 15px;
 }
 .login_header .lh_check .input_check {
-  vertical-align: -2px;
+  vertical-align: -2px; /* 체크박스 아래로 살짝 내림  */
 }
 .login_header .lh_ip {
   float: left;
@@ -727,8 +799,16 @@
   color: #0093bd;
   text-decoration: underline;
 }
+
 .login_content {
   position: relative;
+}
+.login_content .lc_text .input_text {
+  width: 182px;
+  height: 16px;
+  padding: 2px 5px;
+  border: 1px solid #bebebe;
+  margin-bottom: 3px;
 }
 .login_content .lc_btn {
   position: absolute;
@@ -739,21 +819,14 @@
   background: #fff;
   border: 1px solid #bebebe;
 }
-.login_content .input_text {
-  width: 182px;
-  height: 16px;
-  padding: 2px 5px;
-  border: 1px solid #bebebe;
-  margin-bottom: 3px;
-  background: #fff;
-}
+
 .login_footer {
   margin-top: 5px;
 }
-.login_footer li {
+.login_footer ul li {
   display: inline;
 }
-.login_footer li a {
+.login_footer ul li a {
   font-size: 12px;
 }
 
@@ -767,15 +840,15 @@
 .popup ul {
   overflow: hidden;
 }
-.popup li {
+.popup ul li {
   float: left;
   width: 93px;
   margin-right: 5px;
 }
-.popup li.last {
+.popup ul li.last {
   margin-right: 0;
 }
-.popup li img {
+.popup ul li img {
   width: 100%;
 }
 
@@ -787,12 +860,12 @@
 .footer ul {
   margin-bottom: 20px;
 }
-.footer li {
-  position: relative;
+.footer ul li {
   display: inline;
   padding: 0 7px 0 10px;
+  position: relative;
 }
-.footer li:before {
+.footer ul li::before {
   content: "";
   width: 1px;
   height: 12px;
