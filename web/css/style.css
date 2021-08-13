@@ -716,8 +716,8 @@
 /* 갤러리 */
 .gallery {
   border: 1px solid #ccc;
-  height: 254px;
   position: relative;
+  height: 255px;
   overflow: hidden;
 }
 .gallery h4 {
@@ -770,8 +770,41 @@
 .gallery .gallery_btn ul li.gb_icon4 a:hover {
   background-position: -173px -189px;
 }
-.gallery .gallery_img ul li a img {
+.gallery .gallery_img img {
   width: 100%;
+}
+
+/* 슬릭 갤러리 */
+.gallery .gallery_btn button {
+  float: left;
+  display: block;
+  width: 23px;
+  height: 23px;
+  background: url(../img/icon.png) no-repeat;
+}
+.gallery .gallery_btn .gb_icon1 {
+  background-position: -150px -120px;
+}
+.gallery .gallery_btn .gb_icon2 {
+  background-position: -150px -142px;
+}
+.gallery .gallery_btn .gb_icon3 {
+  background-position: -150px -166px;
+}
+.gallery .gallery_btn .gb_icon4 {
+  background-position: -150px -189px;
+}
+.gallery .gallery_btn .gb_icon1:hover {
+  background-position: -173px -120px;
+}
+.gallery .gallery_btn .gb_icon2:hover {
+  background-position: -173px -142px;
+}
+.gallery .gallery_btn .gb_icon3:hover {
+  background-position: -173px -166px;
+}
+.gallery .gallery_btn .gb_icon4:hover {
+  background-position: -173px -189px;
 }
 
 /* 로그인 */
@@ -880,4 +913,30 @@
 }
 .footer .w3c {
   margin-top: 15px;
+}
+
+/* 레이어 팝업 */
+#layer {
+  display: none;
+  position: fixed; /* 상단에 고정시키기 */
+  left: 50px;
+  top: 50px;
+  width: 700px;
+  border: 10px solid #dceff7;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+#layer img {
+  width: 100%;
+  display: block;
+}
+#layer .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: #0093bd;
+  padding: 1px 6px;
+}
+#layer .close:hover {
+  text-decoration: underline;
+  color: #ccc;
 }
